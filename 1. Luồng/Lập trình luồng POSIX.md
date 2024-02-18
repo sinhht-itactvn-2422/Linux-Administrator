@@ -17,3 +17,5 @@
 ***Hệ quả của việc chia sẻ tài nguyên***
 * Thay đổi do một luồng thực hiện đối với tài nguyên hệ thống được chia sẻ sẽ ảnh hưởng đến tất cả các luồng khác.
 * Dữ liệu được truy cập bởi nhiều luồng cần được đồng bộ hóa để tránh xung đột.
+
+![quy trình UNIX]([http://~](https://hpc-tutorials.llnl.gov/posix/images/process.gif)https://hpc-tutorials.llnl.gov/posix/images/process.gif)
