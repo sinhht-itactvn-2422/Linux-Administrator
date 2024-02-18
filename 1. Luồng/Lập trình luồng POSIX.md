@@ -23,3 +23,23 @@ Quy trình UNIX
 
 ![luồng trong quy trình UNIX](https://hpc-tutorials.llnl.gov/posix/images/thread.gif)
 Luồng trong quy trình UNIX
+
+#### 1.1.2 P-Thread
+
+P-Thread được định nghĩa là một tập hợp các kiểu lập trình ngôn ngữ C và các lệnh gọi thủ tục, được triển khai bằng tệp pthread.h header/include và thư viện luồng - mặc dù thư viện này có thể là một phần của thư viện khác, chẳng hạn như libc, trong một số triển khai.
+
+***Lý do chọn P-Thread***:
+
+* ***Nhẹ***:
+  * So với quy trình, luồng được tạo và quản lý với chi phí hệ thống thấp hơn nhiều.
+  * Ví dụ: tạo luồng bằng pthread_create() nhanh hơn nhiều so với tạo quy trình bằng fork().
+
+* ***Truyền thông và trao đổi dữ liệu hiệu quả***:
+  * P-Threads cho phép đạt hiệu suất tối ưu trong môi trường điện toán hiệu năng cao.
+  * Luồng chia sẻ cùng một không gian địa chỉ trong một quy trình, loại bỏ nhu cầu sao chép dữ liệu giữa các tiến trình.
+  * Giao tiếp P-Threads có thể nhanh hơn nhiều so với giao tiếp MPI trên nút.
+ 
+* ***Lợi ích khác***:
+  * Chồng chéo CPU với I/O: các luồng khác có thể thực hiện công việc trong khi chờ I/O.
+  * Lập kế hoạch ưu tiên/thời gian thực: ưu tiên các nhiệm vụ quan trọng hơn.
+  * Xử lý sự kiện không đồng bộ: xen kẽ các nhiệm vụ với các sự kiện dịch vụ không xác định.
